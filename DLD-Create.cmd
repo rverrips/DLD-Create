@@ -67,7 +67,7 @@ echo * erase all employee schedules */>> 1.txt
 echo * This command MUST not be used until file 911 has been defined */>> 1.txt
 echo LME01‑>> 1.txt
 echo * Load badge numbers */>> 1.txt
-bcp "Select 'LEC0100'+Convert(Varchar(28), fin_code+passport_name+Space(40))+'10000' from Oasys2009_SC.dbo.emp_master where fin_code is Not NULL;" queryout "2.txt" -S S-EU-H7507-BO\Oasys -U vicas -P vicas -T -c
+bcp "Select 'LEC0100'+Convert(Varchar(28), fin_code+passport_name+Space(40))+'10000' from Oasys2009_SC.dbo.emp_master where fin_code is Not NULL;" queryout "2.txt" -S S-EU-H7507-BO\Oasys -U %username% -P %password% -T -c
 echo * load schedules */>> 3.txt
 echo LSC01001 0047300997 0218302437‑>> 3.txt
 echo LSC01002 0047400998 0218402438‑>> 3.txt
